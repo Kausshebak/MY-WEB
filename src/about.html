@@ -1,48 +1,46 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>About — Simple Quality Website</title>
-  <link rel="stylesheet" href="/assets/css/styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About - Modern Quality Website</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Poppins", sans-serif;background:#f0f2f5;color:#333;line-height:1.6;animation:fadeIn 1s ease-in;}
+  a{text-decoration:none;transition:0.3s;}
+  header{background:linear-gradient(90deg,#4a90e2,#0072ff);color:#fff;padding:1.2rem 2rem;text-align:center;box-shadow:0 3px 8px rgba(0,0,0,0.15);position:sticky;top:0;z-index:1000;}
+  header h1{margin-bottom:0.5rem;}
+  nav a{color:#fff;margin:0 1rem;font-weight:600;position:relative;}
+  nav a::after{content:"";position:absolute;left:0;bottom:-5px;width:0%;height:2px;background:#fff;transition:width 0.3s;}
+  nav a:hover::after{width:100%;}
+  main{max-width:900px;margin:2rem auto;padding:2rem;background:#fff;border-radius:16px;box-shadow:0 6px 18px rgba(0,0,0,0.08);animation:fadeUp 0.8s ease-in;}
+  h2{margin-bottom:1rem;color:#0072ff;}
+  p{margin-bottom:1rem;}
+  .btn{display:inline-block;padding:0.8rem 1.5rem;background:linear-gradient(90deg,#0072ff,#00c6ff);color:#fff;border-radius:30px;font-weight:bold;transition: transform 0.2s, box-shadow 0.2s;}
+  .btn:hover{transform:scale(1.05);box-shadow:0 4px 12px rgba(0,114,255,0.4);}
+  footer{text-align:center;padding:1rem;margin-top:2rem;background:#f7f7f7;font-size:0.9rem;color:#555;}
+  @keyframes fadeIn{from{opacity:0;} to{opacity:1;}}
+  @keyframes fadeUp{from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);}}
+</style>
 </head>
 <body>
-  <div class="container">
-    <header class="site-header">
-      <div class="brand">
-        <div class="logo">K</div>
-        <div>
-          <div style="font-weight:800">Kavidu's Site</div>
-          <div class="small">About</div>
-        </div>
-      </div>
-      <nav class="site-nav">
-        <a href="/">Home</a>
-        <a href="/about" aria-current="page">About</a>
-        <a href="/contact">Contact</a>
-      </nav>
-    </header>
-
-    <main class="card">
-      <h1>About this project</h1>
-      <p class="small">මෙය sample website එකක්. Frontend එක clean HTML/CSS වලින් ලියලා, backend එක Node + Express වලින් static files serve කරනවා.</p>
-
-      <h2>Tech stack</h2>
-      <ul class="small">
-        <li>HTML5</li>
-        <li>CSS (responsive)</li>
-        <li>Node.js + Express (server)</li>
-      </ul>
-
-      <h2>Customize</h2>
-      <p class="small">assets/css/styles.css file එක edit කර design වෙනස් කරන්න. images තබා <code>src/assets/img/</code> folder එක භාවිත කරන්න.</p>
-    </main>
-
-    <footer class="site-footer">
-      <div class="small">© 2025 Kavidu</div>
-      <div class="small"><a class="link" href="/">Back home</a></div>
-    </footer>
-  </div>
+  <header>
+    <h1>About Us</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Who We Are</h2>
+    <p>We are passionate developers focused on building clean, modern, and responsive websites.</p>
+    <p>Our goal is to deliver high-quality user experiences with smooth animations, gradients, and clear typography.</p>
+    <a href="/contact" class="btn">Contact Us</a>
+  </main>
+  <footer>
+    <p>&copy; 2025 My Modern Website. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
