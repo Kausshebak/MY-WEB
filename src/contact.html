@@ -1,45 +1,55 @@
 <!doctype html>
-<html lang="si">
+<html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Contact - Simple Site</title>
-  <link rel="stylesheet" href="/styles.css" />
+  <title>Contact — Simple Quality Website</title>
+  <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 <body>
   <div class="container">
-    <header>
-      <a class="brand" href="/">KAVI-SITE</a>
-      <nav>
+    <header class="site-header">
+      <div class="brand">
+        <div class="logo">K</div>
+        <div><div style="font-weight:800">Kavidu's Site</div><div class="small">Contact</div></div>
+      </div>
+      <nav class="site-nav">
         <a href="/">Home</a>
         <a href="/about">About</a>
-        <a href="/contact">Contact</a>
+        <a href="/contact" aria-current="page">Contact</a>
       </nav>
     </header>
 
-    <main>
-      <h1>Contact</h1>
-      <p>පණිවිඩයක් එවනවා නම් පහතින් පූරණය කරන්න (උදාහරණය: client-side only).</p>
+    <main class="card small">
+      <h1>Contact us</h1>
+      <p class="small">ඔබේ message එක එවන්න — demo එකක්, server-side එකට log කරනවා.</p>
 
-      <form action="#" method="post" onsubmit="alert('Form submitted (demo)'); return false;">
-        <div class="form-group">
-          <label>නම</label>
-          <input type="text" name="name" placeholder="ඔබේ නම" required />
+      <form action="/contact" method="post">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" placeholder="Your name" required>
         </div>
-        <div class="form-group">
-          <label>ඊ-මේල්</label>
-          <input type="email" name="email" placeholder="you@example.com" required />
+
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required>
         </div>
-        <div class="form-group">
-          <label>පණිවිඩය</label>
-          <textarea name="message" rows="5" placeholder="Message..." required></textarea>
+
+        <div class="form-row">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
         </div>
-        <button type="submit">යවන්න</button>
+
+        <div style="display:flex; gap:.6rem; align-items:center;">
+          <button class="btn" type="submit">Send message</button>
+          <div class="small">Or email: <a class="link" href="mailto:hello@example.com">hello@example.com</a></div>
+        </div>
       </form>
     </main>
 
-    <footer>
-      © 2025 Kavidu • Simple Express site
+    <footer class="site-footer">
+      <div class="small">© 2025 Kavidu</div>
+      <div class="small"><a class="link" href="/">Back home</a></div>
     </footer>
   </div>
 </body>
