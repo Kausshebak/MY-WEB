@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="si">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact - Simple Site</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header>
+      <a class="brand" href="/">KAVI-SITE</a>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <h1>Contact</h1>
+      <p>පණිවිඩයක් එවනවා නම් පහතින් පූරණය කරන්න (උදාහරණය: client-side only).</p>
+
+      <form action="#" method="post" onsubmit="alert('Form submitted (demo)'); return false;">
+        <div class="form-group">
+          <label>නම</label>
+          <input type="text" name="name" placeholder="ඔබේ නම" required />
+        </div>
+        <div class="form-group">
+          <label>ඊ-මේල්</label>
+          <input type="email" name="email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group">
+          <label>පණිවිඩය</label>
+          <textarea name="message" rows="5" placeholder="Message..." required></textarea>
+        </div>
+        <button type="submit">යවන්න</button>
+      </form>
+    </main>
+
+    <footer>
+      © 2025 Kavidu • Simple Express site
+    </footer>
+  </div>
+</body>
+</html>
