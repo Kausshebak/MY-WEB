@@ -1,17 +1,19 @@
 {
-  "name": "simple-site",
+  "name": "simple-quality-website",
   "version": "1.0.0",
-  "description": "Simple Express website with three pages",
+  "description": "Simple responsive website with Node.js + Express",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
+  "keywords": [],
   "author": "Kavidu",
   "license": "MIT",
   "dependencies": {
     "express": "^4.18.2"
   },
   "devDependencies": {
+    "nodemon": "^2.0.22"
   }
 }
