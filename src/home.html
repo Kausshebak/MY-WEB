@@ -1,69 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Home — Simple Quality Website</title>
-  <link rel="stylesheet" href="/assets/css/styles.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Home - Modern Quality Website</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  * {margin:0;padding:0;box-sizing:border-box;}
+  body {font-family:"Poppins", sans-serif; background:#f0f2f5; color:#333; line-height:1.6; animation: fadeIn 1s ease-in;}
+  a {text-decoration:none; transition:0.3s;}
+  header {
+    background: linear-gradient(90deg,#4a90e2,#0072ff);
+    color:#fff;
+    padding:1.2rem 2rem;
+    text-align:center;
+    box-shadow:0 3px 8px rgba(0,0,0,0.15);
+    position: sticky;
+    top:0;
+    z-index:1000;
+  }
+  header h1 {margin-bottom:0.5rem;}
+  nav a {color:#fff;margin:0 1rem;font-weight:600;position:relative;}
+  nav a::after {content:"";position:absolute;left:0;bottom:-5px;width:0%;height:2px;background:#fff;transition:width 0.3s;}
+  nav a:hover::after {width:100%;}
+  main {
+    max-width:900px;
+    margin:2rem auto;
+    padding:2rem;
+    background:#fff;
+    border-radius:16px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+    animation: fadeUp 0.8s ease-in;
+  }
+  h2 {margin-bottom:1rem;color:#0072ff;}
+  p {margin-bottom:1rem;}
+  .btn {
+    display:inline-block;
+    padding:0.8rem 1.5rem;
+    background: linear-gradient(90deg,#0072ff,#00c6ff);
+    color:#fff;
+    border-radius:30px;
+    font-weight:bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .btn:hover {
+    transform:scale(1.05);
+    box-shadow:0 4px 12px rgba(0,114,255,0.4);
+  }
+  footer {
+    text-align:center;
+    padding:1rem;
+    margin-top:2rem;
+    background:#f7f7f7;
+    font-size:0.9rem;
+    color:#555;
+  }
+  @keyframes fadeIn {from{opacity:0;} to{opacity:1;}}
+  @keyframes fadeUp {from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);}}
+</style>
 </head>
 <body>
-  <div class="container">
-    <header class="site-header">
-      <div class="brand">
-        <div class="logo">K</div>
-        <div>
-          <div style="font-weight:800">Kavidu's Site</div>
-          <div class="small">Simple • Fast • Responsive</div>
-        </div>
-      </div>
-      <nav class="site-nav">
-        <a href="/" aria-current="page">Home</a>
-        <a href="/about">About</a>
-        <a href="/contact">Contact</a>
-      </nav>
-    </header>
-
-    <section class="hero card">
-      <div>
-        <h1 class="headline">Clean, responsive website template</h1>
-        <p>මෙය සරල, නමුත් professional අඩවියක්. HTML + CSS + Node (Express) සමඟ ඉතා කදිම starter template එකක්.</p>
-        <p class="small">Use this as a base for portfolios, small business pages, or demo projects.</p>
-        <p style="margin-top:1rem;">
-          <a class="link" href="/about">Learn more about this project →</a>
-        </p>
-      </div>
-
-      <aside class="card small">
-        <h3>Quick features</h3>
-        <ul class="small">
-          <li>Responsive layout</li>
-          <li>Clean CSS with modern look</li>
-          <li>Express server with static assets</li>
-          <li>Simple contact form handler</li>
-        </ul>
-      </aside>
-    </section>
-
-    <section class="card columns">
-      <div>
-        <h2>Why use this?</h2>
-        <p class="small">මෙම template එක ලාභදායකයි: lightweight, easy to customize, and fast to deploy.</p>
-      </div>
-      <div>
-        <h3 class="small">Get started</h3>
-        <ol class="small">
-          <li>Clone files into a folder</li>
-          <li>Run <code>npm install</code></li>
-          <li>Start with <code>npm start</code></li>
-        </ol>
-        <p class="small center"><a class="link" href="/contact">Contact me</a></p>
-      </div>
-    </section>
-
-    <footer class="site-footer">
-      <div class="small">© ${new Date().getFullYear()} Kavidu — Simple Website</div>
-      <div class="small">Built with Node.js • Express</div>
-    </footer>
-  </div>
+  <header>
+    <h1>🌐 My Modern Website</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <h2>Welcome!</h2>
+    <p>This is a modern, clean, and professional website built with Node.js and Express.</p>
+    <p>Enjoy smooth animations, gradient design, and responsive layout across all devices.</p>
+    <a href="/about" class="btn">Learn More</a>
+  </main>
+  <footer>
+    <p>&copy; 2025 Kavidu Rasanga. All Rights Reserved.</p>
+  </footer>
 </body>
 </html>
