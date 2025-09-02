@@ -5,58 +5,111 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Home - Modern Quality Website</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <style>
-  * {margin:0;padding:0;box-sizing:border-box;}
-  body {font-family:"Poppins", sans-serif; background:#f0f2f5; color:#333; line-height:1.6; animation: fadeIn 1s ease-in;}
-  a {text-decoration:none; transition:0.3s;}
-  header {
-    background: linear-gradient(90deg,#4a90e2,#0072ff);
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:"Poppins",sans-serif;background:#f0f2f5;color:#333;line-height:1.6;transition:background 0.3s,color 0.3s;animation:fadeIn 1s ease-in;}
+  a{text-decoration:none;transition:0.3s;}
+
+  /* Dark mode */
+  body.dark{background:#121212;color:#f0f0f0;}
+  body.dark header{background:linear-gradient(90deg,#1f1f1f,#333);}
+  body.dark main{background:#1e1e1e;box-shadow:0 6px 18px rgba(255,255,255,0.05);}
+  body.dark footer{background:#1a1a1a;color:#ccc;}
+  
+  /* Header */
+  header{
+    background:linear-gradient(90deg,#4a90e2,#0072ff);
     color:#fff;
     padding:1.2rem 2rem;
     text-align:center;
     box-shadow:0 3px 8px rgba(0,0,0,0.15);
-    position: sticky;
+    position:sticky;
     top:0;
     z-index:1000;
   }
-  header h1 {margin-bottom:0.5rem;}
-  nav a {color:#fff;margin:0 1rem;font-weight:600;position:relative;}
-  nav a::after {content:"";position:absolute;left:0;bottom:-5px;width:0%;height:2px;background:#fff;transition:width 0.3s;}
-  nav a:hover::after {width:100%;}
-  main {
+  header h1{margin-bottom:0.5rem;}
+  nav a{color:#fff;margin:0 1rem;font-weight:600;position:relative;}
+  nav a::after{content:"";position:absolute;left:0;bottom:-5px;width:0%;height:2px;background:#fff;transition:width 0.3s;}
+  nav a:hover::after{width:100%;}
+
+  /* Dark mode toggle button */
+  .dark-toggle{
+    position:absolute;
+    top:10px;
+    right:20px;
+    background:#fff;
+    border:none;
+    border-radius:50%;
+    width:40px;
+    height:40px;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:1.2rem;
+    transition:transform 0.2s, background 0.3s, color 0.3s;
+  }
+  .dark-toggle:hover{transform:scale(1.1);}
+  body.dark .dark-toggle{background:#333;color:#fff;}
+
+  /* Main */
+  main{
     max-width:900px;
     margin:2rem auto;
     padding:2rem;
     background:#fff;
     border-radius:16px;
     box-shadow:0 6px 18px rgba(0,0,0,0.08);
-    animation: fadeUp 0.8s ease-in;
+    animation:fadeUp 0.8s ease-in;
+    text-align:center;
   }
-  h2 {margin-bottom:1rem;color:#0072ff;}
-  p {margin-bottom:1rem;}
-  .btn {
-    display:inline-block;
+  h2{margin-bottom:1.5rem;color:#0072ff;}
+  body.dark h2{color:#1e90ff;}
+  p{margin-bottom:1rem;}
+  
+  /* Buttons below Welcome */
+  .social-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:1rem;
+    margin-top:1.5rem;
+  }
+  .social-buttons a{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:0.5rem;
     padding:0.8rem 1.5rem;
-    background: linear-gradient(90deg,#0072ff,#00c6ff);
-    color:#fff;
     border-radius:30px;
-    font-weight:bold;
-    transition: transform 0.2s, box-shadow 0.2s;
+    color:#fff;
+    font-weight:600;
+    transition:transform 0.2s, box-shadow 0.3s, background 0.3s;
   }
-  .btn:hover {
+  .social-buttons a:hover{
     transform:scale(1.05);
-    box-shadow:0 4px 12px rgba(0,114,255,0.4);
+    box-shadow:0 6px 15px rgba(0,0,0,0.3);
   }
-  footer {
+  .youtube{background: linear-gradient(45deg,#FF0000,#FF4C4C);}
+  .whatsapp{background: linear-gradient(45deg,#25D366,#2BE67E);}
+  .whatsapp2{background: linear-gradient(45deg,#128C7E,#1AD3B5);}
+  .btn-learn{background: linear-gradient(45deg,#0072ff,#00c6ff);}
+  
+  /* Footer */
+  footer{
     text-align:center;
     padding:1rem;
     margin-top:2rem;
     background:#f7f7f7;
     font-size:0.9rem;
     color:#555;
+    transition:background 0.3s,color 0.3s;
   }
-  @keyframes fadeIn {from{opacity:0;} to{opacity:1;}}
-  @keyframes fadeUp {from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);}}
+  body.dark footer{background:#1a1a1a;color:#ccc;}
+
+  @keyframes fadeIn{from{opacity:0;} to{opacity:1;}}
+  @keyframes fadeUp{from{opacity:0; transform:translateY(30px);} to{opacity:1; transform:translateY(0);}}
 </style>
 </head>
 <body>
@@ -67,15 +120,48 @@
       <a href="/about">About</a>
       <a href="/contact">Contact</a>
     </nav>
+    <button class="dark-toggle" id="darkToggle"><i class="fas fa-moon"></i></button>
   </header>
+
   <main>
     <h2>Welcome!</h2>
     <p>This is a modern, clean, and professional website built with Node.js and Express.</p>
-    <p>Enjoy smooth animations, gradient design, and responsive layout across all devices.</p>
-    <a href="/about" class="btn">Learn More</a>
+    <p>Enjoy smooth animations, gradient design, responsive layout, and dark mode toggle.</p>
+
+    <!-- Social Buttons Below Welcome -->
+    <div class="social-buttons">
+      <a href="https://youtube.com/YourChannel" target="_blank" class="youtube">
+        <i class="fab fa-youtube"></i> View YouTube Channel
+      </a>
+      <a href="https://wa.me/1234567890" target="_blank" class="whatsapp">
+        <i class="fab fa-whatsapp"></i> Contact WhatsApp
+      </a>
+      <a href="https://wa.me/1234567890" target="_blank" class="whatsapp2">
+        <i class="fab fa-whatsapp"></i> View WhatsApp Channel
+      </a>
+      <a href="/about" class="btn-learn">
+        <i class="fas fa-arrow-right"></i> Learn More
+      </a>
+    </div>
   </main>
+
   <footer>
-    <p>&copy; 2025 Kavidu Rasanga. All Rights Reserved.</p>
+    <p>&copy; 2025 My Modern Website. All Rights Reserved.</p>
   </footer>
+
+<script>
+  const toggleBtn = document.getElementById('darkToggle');
+  toggleBtn.addEventListener('click',()=>{
+    document.body.classList.toggle('dark');
+    const icon = toggleBtn.querySelector('i');
+    if(document.body.classList.contains('dark')){
+      icon.classList.remove('fa-moon');
+      icon.classList.add('fa-sun');
+    } else{
+      icon.classList.remove('fa-sun');
+      icon.classList.add('fa-moon');
+    }
+  });
+</script>
 </body>
 </html>
